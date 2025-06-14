@@ -8,6 +8,7 @@ const resend = new Resend("re_xxx");
 
 app.get("/", async (c) => {
   const { data, error } = await resend.emails.send({
+    // ここのfromは独自ドメインである必要があるんだと思う．
     from: "Acme <onboarding@resend.dev>",
     to: ["garireodragon@gmail.com"],
     subject: "hello world",
